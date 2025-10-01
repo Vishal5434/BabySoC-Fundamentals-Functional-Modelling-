@@ -57,5 +57,6 @@ In the post-synthesis simulation, the clock from the PLL drives the RVMYTH core,
 
 # RVMYTH simulation
 
+ <img src="images_w2/rvmythcore_sim.png" alt="Diagram" width="850px" />
 
-This waveform shows the RVMyth CPU core running in simulation. The clock (clk) at the top is the driving signal that keeps the CPU running, toggling at a steady rate. The reset signal is low here, which means the CPU is active and executing instructions. The core produces 10-bit output values on out[9:0], and you can see those bits rapidly toggling as the CPU processes data. These digital values are then combined into the smooth curve below, which is a real-valued representation of the output. The rising and falling pattern of this curve reflects the CPU’s internal operation, as it continuously updates register values and sends them out.
+This waveform shows the RVMYTH CPU core running in simulation. The clock (clk) at the top is the driving signal that keeps the CPU running, toggling at a steady rate. The reset signal is low here, which means the CPU is active and executing instructions. The core produces 10-bit output values on out[9:0], and you can see those bits rapidly toggling as the CPU processes data. These digital values are then combined into the smooth curve below, which is a real-valued representation of the output. The rising and falling pattern of this curve reflects the CPU’s internal operation, as it continuously updates register values and sends them out.
