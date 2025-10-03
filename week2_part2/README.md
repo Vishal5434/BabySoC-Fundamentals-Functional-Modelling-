@@ -60,3 +60,26 @@ In the post-synthesis simulation, the clock from the PLL drives the RVMYTH core,
  <img src="images_w2/rvmythcore_sim.png" alt="Diagram" width="850px" />
 
 This waveform shows the RVMYTH CPU core running in simulation. The clock (clk) at the top is the driving signal that keeps the CPU running, toggling at a steady rate. The reset signal is low here, which means the CPU is active and executing instructions. The core produces 10-bit output values on out[9:0], and you can see those bits rapidly toggling as the CPU processes data. These digital values are then combined into the smooth curve below, which is a real-valued representation of the output. The rising and falling pattern of this curve reflects the CPU’s internal operation, as it continuously updates register values and sends them out.
+
+# DAC simulation
+
+<img src="images_w2/avsddac_sim.png" alt="Diagram" width="850px" />
+
+Now integrating DAC with RVMYTH core,
+
+**Pre synthesis simulation:**
+
+<img src="images_w2/rvmyth_dac_pre.png" alt="Diagram" width="850px" />
+
+This waveform shows the pre-synthesis simulation of a DAC integrated with the RVMYTH CPU. The digital output from the RVMYTH (D[9:0] or out[9:0]) is fed into the DAC, which converts it into an analog-like signal. The green waveform at the top shows the smooth analog output corresponding to the CPU’s digital values, demonstrating how digital processing translates into analog signals in hardware.
+
+**Post synthesis simulation:**
+
+<img src="images_w2/rvmyth_dac_post.png" alt="Diagram" width="850px" />
+
+After synthesis, the signals are verified to confirm correct timing, logic, and functional behavior when mapped to gates. The smooth waveform for out[9:0] suggests analog signal reconstruction from digital values, while the processor and DAC interface's correctness is validated under synthesized conditions.
+
+
+# Conclusion
+This project has been a rewarding journey through the complete design and verification flow of the BabySoC and its key components. By carefully validating each block—both before and after synthesis—confidence has been built that the digital designs perform as intended, from the RTL description all the way to gate-level netlists. Observing consistent results in the processor, memory, DAC, and full SoC simulations not only confirms the correctness of the design, but also showcases the importance of thorough verification in silicon projects. With these results, the BabySoC platform stands on solid ground, ready for the next steps in physical implementation and innovation.
+
