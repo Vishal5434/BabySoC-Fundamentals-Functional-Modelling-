@@ -1,6 +1,6 @@
 # Introduction
 VSDbabySoC is a compact SoC design that includes a RISCV-based processor named RVMYTH, along with analog components like a PLL (Phase-Locked Loop) and DAC (Digital-to-Analog Converter). It serves as a practical platform to explore and simulate the integration of digital and analog circuits in a modern chip design.
-# Pre synthesis simulation
+# Pre synthesis simulation of vsdbabysoc
 Pre-synthesis simulation of BabySoC involves verifying the RTL code behavior before synthesizing it into hardware. It checks the functional correctness of the design using test benches without considering gate-level details, ensuring the logic functions as intended. This step helps catch errors early in the design flow before moving to synthesis and physical implementation.
 
 ```
@@ -37,7 +37,7 @@ In the image:
 **Explanation:**
 The clock is generated with a PLL (Phase locked loop) and drives the RVMYTH CPU core to simulate results based on the ISA of the core(RISC-V here).In this simulation, the RVMYTH core is continuously sending 10-bit digital values (RV_TO_DAC[9:0]) to the DAC. The first OUT signal is the digital representation of the DAC.Since the DAC converts these digital steps into a real value, the output (red waveform) does not appear as a flat digital line but instead forms smooth wave of analog values.
 
-# Post synthesis simulation
+# Post synthesis simulation of vsdbabysoc
 
 After synthesis with Yosys, the design is converted from RTL code into a gate-level netlist. The post-synthesis simulation runs this gate-level version, so the waveforms may look a bit more detailed or slightly delayed compared to pre-synthesis (because now actual gates, flip-flops, and propagation delays are modeled). Functionally, the behavior remains the same as the RTL simulation, which helps confirm that the synthesis process did not break the design.
 
