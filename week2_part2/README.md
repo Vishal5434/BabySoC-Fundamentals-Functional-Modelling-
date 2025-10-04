@@ -17,7 +17,7 @@ GTKwave Analyzer v3.3.116 (w)1999-2000 BSI
 [0] start time
 [84999000] end time
 ```
-  <img src="images_w2/pre_synth_sim_vsdbabysoc.png" alt="Diagram" width="850px" />
+<img src="../images_w2/pre_synth_sim_vsdbabysoc.png" alt="Diagram" width="850px" />
 
 This is the gtkwave simulation of the RTL behavior of vsdbabysoc.
 
@@ -49,7 +49,7 @@ GTKwave Analyzer v3.3.116 (w)1999-2000 BSI
 [0] start time
 [84999000] end time
 ```
- <img src="images_w2/post_synth_sim_vsdbabysoc.png" alt="Diagram" width="850px" />
+<img src="../images_w2/post_synth_sim_vsdbabysoc.png" alt="Diagram" width="850px" />
  
 **Explanation:**
 
@@ -57,25 +57,25 @@ In the post-synthesis simulation, the clock from the PLL drives the RVMYTH core,
 
 # RVMYTH simulation
 
- <img src="images_w2/rvmythcore_sim.png" alt="Diagram" width="850px" />
+ <img src="../images_w2/rvmythcore_sim.png" alt="Diagram" width="850px" />
 
 This waveform shows the RVMYTH CPU core running in simulation. The clock (clk) at the top is the driving signal that keeps the CPU running, toggling at a steady rate. The reset signal is low here, which means the CPU is active and executing instructions. The core produces 10-bit output values on out[9:0], and you can see those bits rapidly toggling as the CPU processes data. These digital values are then combined into the smooth curve below, which is a real-valued representation of the output. The rising and falling pattern of this curve reflects the CPU’s internal operation, as it continuously updates register values and sends them out.
 
 # DAC simulation
 
-<img src="images_w2/avsddac_sim.png" alt="Diagram" width="850px" />
+<img src="../images_w2/avsddac_sim.png" alt="Diagram" width="850px" />
 
 Now integrating DAC with RVMYTH core,
 
 **Pre synthesis simulation:**
 
-<img src="images_w2/rvmyth_dac_pre.png" alt="Diagram" width="850px" />
+<img src="../images_w2/rvmyth_dac_pre.png" alt="Diagram" width="850px" />
 
 This waveform shows the pre-synthesis simulation of a DAC integrated with the RVMYTH CPU. The digital output from the RVMYTH (D[9:0] or out[9:0]) is fed into the DAC, which converts it into an analog-like signal. The green waveform at the top shows the smooth analog output corresponding to the CPU’s digital values, demonstrating how digital processing translates into analog signals in hardware.
 
 **Post synthesis simulation:**
 
-<img src="images_w2/rvmyth_dac_post.png" alt="Diagram" width="850px" />
+<img src="../images_w2/rvmyth_dac_post.png" alt="Diagram" width="850px" />
 
 After synthesis, the signals are verified to confirm correct timing, logic, and functional behavior when mapped to gates. The smooth waveform for out[9:0] suggests analog signal reconstruction from digital values, while the processor and DAC interface's correctness is validated under synthesized conditions.
 
